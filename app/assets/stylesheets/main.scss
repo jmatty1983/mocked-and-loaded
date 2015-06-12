@@ -1,3 +1,30 @@
-.footer {
-  text-align: center;
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import "mixins.scss";
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    @include vendor-prefix(box-sizing, border-box);
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
 }

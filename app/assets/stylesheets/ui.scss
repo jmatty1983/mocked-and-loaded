@@ -1,0 +1,20 @@
+@import "mixins.scss";
+
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-xlg {
+  font-size: 2em;
+  border-radius: .5em;
+  padding: .6em 1.5em;
+}
+
+.btn-blue {
+  background: #00f;
+}
