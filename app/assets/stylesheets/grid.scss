@@ -1,0 +1,42 @@
+$grid-columns: 12;
+$grid-max-width: 65em;
+
+$breakpoint-small: "only screen and (min-width: 20em)";
+$breakpoint-medium: "only screen and (min-width: 30em)";
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container:after,
+.row:after {
+      content: "";
+      display: table;
+      clear: both;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: .3em;
+    width: 100%;
+    min-height: 1px;
+}
+
+@media #{$breakpoint-medium} {
+  .container {
+    width: 95%;
+    max-width: $grid-max-width;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      width: 100% / $grid-columns * $i;
+      height: 100%;
+    }
+
+    .push-#{$i} {
+      margin-left: 100% / $grid-columns * $i;
+    }
+  }
+}
