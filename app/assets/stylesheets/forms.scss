@@ -1,0 +1,24 @@
+.form-text {
+  border-radius: 3px;
+  padding: 3px;
+  margin-bottom: 3px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  width: 100%;
+  color: #000;
+}
+
+.form-text:focus{
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+.lbl-right {
+  text-align: right;
+}
+
+.new_mock {
+  .btn {
+    margin-top: .5em;
+  }
+}

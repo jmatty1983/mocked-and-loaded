@@ -1,3 +1,40 @@
+<h1>New Mock Settings</h1>
 <%= form_for Mock.new do |f| %>
-  <%= f.select :player_count, (1..32).to_a %>
+  <div class="row">
+    <%= f.label :name, class: "col-2 push-1 lbl-right" %>
+    <%= f.text_field :name, class: "form-text col-4", value: "Mock_#{Time.now.strftime("%b_%d_%Y_%H_%M_%S")}" %>
+    <%= f.label :team_count, "Teams", class: "col-2 lbl-right" %>
+    <%= f.select :team_count, (1..32).to_a, {selected: "12"}, class: "form-text col-4" %>
+  </div>
+  <div class="row">
+    <%= f.label :qb, "QB", class: "col-2 push-1 lbl-right" %>
+    <%= f.select :qb, (0..4).to_a, {selected: "1"}, class: "form-text col-1" %>
+    <%= f.label :rb, "RB", class: "col-2 lbl-right" %>
+    <%= f.select :rb, (0..6).to_a, {selected: "2"}, class: "form-text col-1" %>
+    <%= f.label :wr, "WR", class: "col-2 lbl-right" %>
+    <%= f.select :wr, (0..6).to_a, {selected: "2"}, class: "form-text col-1" %>
+    <%= f.label :te, "TE", class: "col-2 lbl-right" %>
+    <%= f.select :te, (0..4).to_a, {selected: "1"}, class: "form-text col-1" %>
+  </div>
+  <div class="row">
+    <%= f.label :rbwr, "RB/WR", class: "col-2 lbl-right push-1" %>
+    <%= f.select :rbwr, (0..4).to_a, {selected: "0"}, class: "form-text col-1" %>
+    <%= f.label :rbwrte, "RB/WR/TE", class: "col-2 lbl-right" %>
+    <%= f.select :rbwrte, (0..4).to_a, {selected: "1"}, class: "form-text col-1" %>
+    <%= f.label :qbrbwrte, "QB/RB/WR/TE", class: "col-2 lbl-right" %>
+    <%= f.select :qbrbwrte, (0..4).to_a, {selected: "0"}, class: "form-text col-1" %>
+    <%= f.label :k, "K", class: "col-2 lbl-right" %>
+    <%= f.select :k, (0..4).to_a, {selected: "1"}, class: "form-text col-1" %>
+  </div>
+  <div class="row">
+    <%= f.label :dst, "DST", class: "col-2 lbl-right push-1" %>
+    <%= f.select :dst, (0..4).to_a, {selected: "1"}, class: "form-text col-1" %>
+    <%= f.label :bn, "Bench", class: "col-2 lbl-right" %>
+    <%= f.select :bn, (0..30).to_a, {selected: "6"}, class: "form-text col-1" %>
+  </div>
+  <div class="row">
+    <div class="landing-center-wrap">
+      <%= f.submit "Start Mock", class: "btn btn-lg btn-blue" %>
+    </div>
+  </div>
 <% end %>

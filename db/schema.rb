@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613162219) do
+ActiveRecord::Schema.define(version: 20150613211040) do
 
   create_table "mocks", force: :cascade do |t|
     t.string   "name"
-    t.integer  "player_count"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "team_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "qb"
+    t.integer  "rb"
+    t.integer  "wr"
+    t.integer  "te"
+    t.integer  "rbwr"
+    t.integer  "rbwrte"
+    t.integer  "qbrbwrte"
+    t.integer  "k"
+    t.integer  "dst"
+    t.integer  "bn"
   end
 
 end
