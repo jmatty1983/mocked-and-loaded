@@ -1,0 +1,14 @@
+.mock-tracker {
+  max-height: 40em;
+   overflow-y:scroll;
+}
+
+.mock-tracker-item {
+  &:hover {
+    background: #cfc;
+  }
+}
+
+.mock-tracker-edit-btn {
+  color: #000;
+}

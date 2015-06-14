@@ -1,5 +1,5 @@
 <h1>New Mock Settings</h1>
-<%= form_for Mock.new do |f| %>
+<%= form_for @mock do |f| %>
   <div class="row">
     <%= f.label :name, class: "col-2 push-1 lbl-right" %>
     <%= f.text_field :name, class: "form-text col-4", value: "Mock_#{Time.now.strftime("%b_%d_%Y_%H_%M_%S")}" %>

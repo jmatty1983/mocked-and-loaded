@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613211040) do
+ActiveRecord::Schema.define(version: 20150614194846) do
 
   create_table "mocks", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,29 @@ ActiveRecord::Schema.define(version: 20150613211040) do
     t.integer  "k"
     t.integer  "dst"
     t.integer  "bn"
+  end
+
+  create_table "picks", force: :cascade do |t|
+    t.integer  "mock_id"
+    t.integer  "team_id"
+    t.integer  "player_id"
+    t.integer  "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "pro_status"
+    t.integer  "cbs_id"
+    t.string   "pro_team"
+    t.integer  "bye_week"
+    t.string   "photo_url"
+    t.string   "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "full_name"
   end
 
 end

@@ -1,26 +1,30 @@
 $grid-columns: 16;
-$grid-max-width: 65em;
+$grid-max-width: 80em;
 
 $breakpoint-small: "only screen and (min-width: 20em)";
 $breakpoint-medium: "only screen and (min-width: 30em)";
 
 .container {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .container:after,
 .row:after {
-      content: "";
-      display: table;
-      clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 [class*='col-'] {
-    float: left;
-    padding: .3em;
-    width: 100%;
-    min-height: 1px;
+  float: left;
+  padding: .3em;
+  width: 100%;
+  min-height: 1px;
+}
+
+.no-vpad {
+  padding: 0 .3em;
 }
 
 @media #{$breakpoint-medium} {

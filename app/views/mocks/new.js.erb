@@ -1,4 +1,3 @@
 $('#mock-start').fadeOut('fast', function() {
   $(this).html("<%= j(render "form") %>").fadeIn('fast');
-  window.history.pushState("New Mock", "New Mock", "/mocks/new");
 });
