@@ -1,6 +1,6 @@
-<h1>Pick <%= "#{@pick.index}" %></h1>
+<h1>Pick <%= "#{pick.index}" %></h1>
 
-<%= form_for @pick do |f| %>
+<%= form_for pick do |f| %>
   <%= f.label :player_id, "Player" %>
   <%= f.text_field :player_id %>
   <%= f.label :team_id, "Team" %>

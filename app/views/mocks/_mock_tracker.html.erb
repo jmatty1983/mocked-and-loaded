@@ -3,12 +3,12 @@
     <%= content_tag :div, class: "row" do %>
       <%= content_tag :div, "#{i / @mock.team_count + 1}.#{i % @mock.team_count + 1}", class: "col-4 no-vpad" %>
       <%= content_tag :div, class: "col-12 no-vpad mock-tracker-item" do %>
-        <%= link_to "W", edit_pick_path(pick), class: "mock-tracker-edit-btn", remote: true %>
         <% if pick.player %>
-          <%= "#{pick.player.first_name} #{pick.player.last_name}" %>
+          <% linkStr = "#{pick.player.first_name} #{pick.player.last_name}" %>
         <% else %>
-          empty
+          <% linkStr = "Team #{pick.team_id}" %>
         <% end %>
+        <%= link_to linkStr, edit_pick_path(pick), class: "mock-tracker-edit-btn", remote: true %>
       <% end %>
     <% end %>
   <% end %>
