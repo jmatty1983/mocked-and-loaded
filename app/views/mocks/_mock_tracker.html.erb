@@ -6,7 +6,7 @@
         <% if pick.player %>
           <% linkStr = "#{pick.player.first_name} #{pick.player.last_name}" %>
         <% else %>
-          <% linkStr = "Team #{pick.team_id}" %>
+          <% linkStr = "#{pick.team.name}" %>
         <% end %>
         <%= link_to linkStr, edit_pick_path(pick), class: "mock-tracker-edit-btn", remote: true %>
       <% end %>

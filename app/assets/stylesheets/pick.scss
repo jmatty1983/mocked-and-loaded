@@ -1,0 +1,15 @@
+.player-search-autocomplete {
+  width: 88.5%;
+  background: #fff;
+  position: absolute;
+  border: 1px #ccc solid;
+  border-radius: 4px;
+  margin-top: -3px;
+  display: none;
+  ul {
+    list-style-type: none;
+    li:hover{
+      background: #cfc;
+    }
+  }
+}

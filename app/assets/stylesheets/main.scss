@@ -4,9 +4,9 @@
 *,
 *:after,
 *:before {
-    margin: 0;
-    padding: 0;
-    @include vendor-prefix(box-sizing, border-box);
+  margin: 0;
+  padding: 0;
+  @include vendor-prefix(box-sizing, border-box);
 }
 
 body {
@@ -15,9 +15,9 @@ body {
 }
 
 img {
-    width: auto;
-    max-width: 100%;
-    height: auto !important;
+  width: auto;
+  max-width: 100%;
+  height: auto !important;
 }
 
 a {
@@ -27,4 +27,14 @@ a {
   &:hover {
     color: #fff;
   }
+}
+
+.center-wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.no-clear
+{
+  clear: none;
 }

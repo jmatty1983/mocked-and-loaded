@@ -8,15 +8,20 @@ class MocksController < ApplicationController
     @mock = Mock.new(mock_params)
 
     if @mock.save
-      picks = []
-      @mock.round_count.times do |i|
+      Team.transaction do
         @mock.team_count.times do |n|
-          picks.push(mock_id: @mock.id, team_id: n, index: n + (i * @mock.team_count))
+          @mock.teams.create(name: "Team #{n}")
         end
       end
 
+      teams = @mock.teams
+
       Pick.transaction do
-        Pick.create(picks)
+        @mock.round_count.times do |i|
+          teams.each do |team|
+            team.picks.create()
+          end
+        end
       end
 
       redirect_to @mock

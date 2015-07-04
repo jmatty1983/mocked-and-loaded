@@ -1,8 +1,18 @@
 <h1>Pick <%= "#{pick.index}" %></h1>
 
 <%= form_for pick do |f| %>
-  <%= f.label :player_id, "Player" %>
-  <%= f.text_field :player_id %>
-  <%= f.label :team_id, "Team" %>
-  <%= f.text_field :team_id %>
+  <div class="player-search">
+    <%= f.label :player_id, "Player" %>
+    <%= f.text_field :player_id, class: "form-text", id: "player-search", placeholder: "Empty" %>
+    <div class="player-search-autocomplete">
+      <ul id="player-search-ul">
+
+      </ul>
+    </div>
+  </div>
+  <%= f.label :team_id, "Team", class: 'no-clear' %>
+  <%= f.select :team_id, pick.team.mock.teams.collect { |t| [t.name, t.id] }, {}, class: "form-text" %>
+  <div class="center-wrap">
+    <%= f.submit "Save", class: "btn btn-blue btn-md" %>
+  </div>
 <% end %>

@@ -1,6 +1,8 @@
 .mock-tracker {
   max-height: 40em;
-   overflow-y:scroll;
+  overflow-y: scroll;
+  border-style: inset;
+  border-width: 2px;
 }
 
 .mock-tracker-item {
