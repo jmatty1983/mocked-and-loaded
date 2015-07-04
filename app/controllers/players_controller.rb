@@ -1,7 +1,9 @@
 class PlayersController < ApplicationController
 
   def search
-    players = Player.where("LOWER(full_name) like ?", "%#{params[:string]}%".downcase).limit(5)
-    render json: players
+    searchStr = params[:string]
+    players = Player.where("LOWER(full_name) like ?", "%#{searchStr}%".downcase).limit(5)
+    retHash = { searchStr: searchStr, players: players }
+    render json: retHash
   end
 end

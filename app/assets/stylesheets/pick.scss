@@ -6,10 +6,19 @@
   border-radius: 4px;
   margin-top: -3px;
   display: none;
+  box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.75);
   ul {
     list-style-type: none;
-    li:hover{
-      background: #cfc;
+    li{
+      padding-left: .4em;
+      &:hover {
+        background: #cfc;
+      }
     }
   }
+}
+
+.highlight-subString {
+  color: #a0a;
+  font-weight: bold;
 }
