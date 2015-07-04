@@ -1,9 +1,10 @@
 <h1>Pick <%= "#{pick.index}" %></h1>
 
-<%= form_for pick do |f| %>
+<%= form_for pick, remote: true do |f| %>
+  <%= f.hidden_field :player_id %>
   <div class="player-search">
-    <%= f.label :player_id, "Player" %>
-    <%= f.text_field :player_id, class: "form-text", id: "player-search", placeholder: "Empty" %>
+    <%= label_tag :full_name, "Player" %>
+    <%= text_field_tag :full_name, nil, class: "form-text", id: "player-search", placeholder: "Empty" %>
     <div class="player-search-autocomplete">
       <ul id="player-search-ul">
 

@@ -4,6 +4,11 @@ highlightSubString = (string, subString) ->
     "<span class='highlight-subString'>#{str}</span>"
   )
 
+setPick = ->
+  $('#player-search').val($(this).text())
+  $('.player-search-autocomplete').hide()
+  $('#pick_player_id').val($(this).data('id'))
+
 @setModalContent = (content) ->
   autoCompleteLast = null
 
@@ -25,8 +30,12 @@ highlightSubString = (string, subString) ->
               playerSearchUl = $('#player-search-ul')
               playerSearchUl.html('')
               for d in data['players']
-                playerSearchUl.append "<li>#{highlightSubString(d.full_name, data['searchStr'])}</li>"
+                playerStr = "#{highlightSubString(d.full_name, data['searchStr'])}"
+                playerStr = "#{playerStr} (#{d.pro_team} - #{d.position})"
+                playerSearchUl.append "<li class='player-picker-item' data-id='#{d.id}'>#{playerStr}</li>"
               $('.player-search-autocomplete').show()
+              $('.player-picker-item').click setPick
+
             else
               $('.player-search-autocomplete').hide()
             return false
