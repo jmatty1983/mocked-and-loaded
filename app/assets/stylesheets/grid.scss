@@ -30,7 +30,7 @@ $breakpoint-medium: "only screen and (min-width: 30em)";
 @media #{$breakpoint-medium} {
   .container {
     width: 95%;
-    max-width: $grid-max-width;
+    //max-width: $grid-max-width;
   }
 
   @for $i from 1 through $grid-columns {

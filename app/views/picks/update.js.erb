@@ -1,2 +1,4 @@
 $('.modal').fadeOut('fast');
-console.log('update tracker here');
+var pickDiv = $("#pick-<%= "#{@pick.id}" %>");
+pickDiv.html('<a class="mock-tracker-edit-btn" data-remote="true" href="/picks/<%= @pick.id %>/edit"><%= @pick.player.full_name %></a>');
+pickDiv.append('<%= j(content_tag :span, @pick.player.position, class: "mock-tracker-right-#{@pick.player.position}") if @pick.player %>');

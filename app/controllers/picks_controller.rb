@@ -6,6 +6,7 @@ class PicksController < ApplicationController
 
   def update
     @pick = Pick.find(params[:id])
+    @pick.update(pick_params)
   end
 
   private
