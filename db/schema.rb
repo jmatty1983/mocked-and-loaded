@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623004458) do
+ActiveRecord::Schema.define(version: 20150705174651) do
 
   create_table "mocks", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150623004458) do
     t.integer  "k"
     t.integer  "dst"
     t.integer  "bn"
+    t.integer  "user_team"
   end
 
   create_table "picks", force: :cascade do |t|

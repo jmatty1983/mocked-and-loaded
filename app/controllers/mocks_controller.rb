@@ -2,18 +2,13 @@ class MocksController < ApplicationController
 
   def new
     @mock = Mock.new
+    12.times { |i| @mock.teams.build(name: "Team #{i + 1}") }
   end
 
   def create
     @mock = Mock.new(mock_params)
 
     if @mock.save
-      Team.transaction do
-        @mock.team_count.times do |n|
-          @mock.teams.create(name: "Team #{n}")
-        end
-      end
-
       teams = @mock.teams
 
       Pick.transaction do
@@ -39,6 +34,7 @@ class MocksController < ApplicationController
     def mock_params
       params.require(:mock).permit(:name, :player_count, :qb, :rb, :wr, :te,
                                    :rbwr, :rbwrte, :qbrbwrte, :k, :dst, :bn,
-                                   :team_count)
+                                   :team_count, :user_team,
+                                   teams_attributes: [:name])
     end
 end

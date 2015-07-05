@@ -1,3 +1,5 @@
 $('#mock-start').fadeOut('fast', function() {
-  $(this).html("<%= j(render "form") %>").fadeIn('fast');
+  $(this).html("<%= j(render "form") %>").fadeIn('fast', function() {
+    mockFormHooks()
+  });
 });
