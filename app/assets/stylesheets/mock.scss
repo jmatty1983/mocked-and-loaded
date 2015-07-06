@@ -8,6 +8,7 @@
 
 .mock-tracker-item {
   padding: 1px 0;
+  text-indent: .4em;
   &:hover {
     background: #cfc;
   }
@@ -18,6 +19,7 @@
 }
 
 [class*='mock-tracker-right-'] {
+  text-indent: 0;
   float: right;
   color: #fff;
   padding: 0 5px;

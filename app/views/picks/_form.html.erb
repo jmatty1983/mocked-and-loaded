@@ -5,7 +5,8 @@
   <% optionsHash = { value: pick.player.id } if pick.player %>
   <%= f.hidden_field :player_id, optionsHash %>
   <div class="player-search">
-    <%= label_tag :full_name, "Player" %>
+    <%= label_tag :full_name, "Player", class: "col-14" %>
+    <div id="player-clear" class="col-2 right player-clear">(remove)</div>
     <% optionsHash = {class: "form-text", id: "player-search", placeholder: "Empty", autocomplete: "off"} %>
     <% optionsHash[:value] = "#{pick.player.full_name} (#{pick.player.pro_team} - #{pick.player.position})" if pick.player %>
     <%= text_field_tag :full_name, nil, optionsHash %>

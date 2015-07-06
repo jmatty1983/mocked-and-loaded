@@ -13,8 +13,14 @@ class MocksController < ApplicationController
 
       Pick.transaction do
         @mock.round_count.times do |i|
-          teams.each do |team|
-            team.picks.create()
+          if i % 2 == 0
+            teams.each do |team|
+              team.picks.create()
+            end
+          else
+            teams.reverse.each do |team|
+              team.picks.create()
+            end
           end
         end
       end

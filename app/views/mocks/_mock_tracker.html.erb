@@ -1,4 +1,4 @@
-<%= content_tag :div, class: 'col-3 mock-tracker' do %>
+<%= content_tag :div, class: 'mock-tracker' do %>
   <% @mock.picks.each_with_index do |pick, i| %>
     <%= content_tag :div, class: "row" do %>
       <%= content_tag :div, "#{i / @mock.team_count + 1}.#{i % @mock.team_count + 1}", class: "col-2 no-vpad" %>
