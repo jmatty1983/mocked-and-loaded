@@ -1,0 +1,8 @@
+var count = $('#mock_team_count').val();
+for(var i = 0; i < count; i++) {
+  var teamVal = $('#team-' + i).val();
+  teamVal = teamVal.replace(/"/g, "");
+  $('#mock_teams_attributes_' + i + '_name').val(teamVal);
+}
+
+$('.modal').fadeOut('fast');

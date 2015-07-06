@@ -1,0 +1,14 @@
+$('.modal').fadeIn("fast");
+setModalContent("<%= j(render 'form') %>", function() {
+  var count = $('#mock_team_count').val();
+  var teamUpdateForm = $('#team-update-form');
+  for(var i = 0; i < count; i++) {
+    curName = $('#mock_teams_attributes_' + i + '_name').val();
+    teamUpdateForm.append("<input type='text' name='team-" + i + "' id='team-" + i + "' \
+                          class='col-8 form-text' placeholder='Team " + (i + 1) + " Name' \
+                          value=\"" + curName + "\">");
+  }
+
+  teamUpdateForm.append("<div id='modal-center-wrap' class='center-wrap'></div>");
+  $('#modal-center-wrap').append('<input type="submit" name="commit" value="Save" class="btn btn-blue btn-md">');
+});

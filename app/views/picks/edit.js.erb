@@ -1,2 +1,45 @@
 $('.modal').fadeIn("fast");
-setModalContent('<%= j(render 'form', pick: @pick) %>');
+
+setModalContent('<%= j(render 'form', pick: @pick) %>', function() {
+  $('#player-search').keyup(function(e) {
+    var autoCompleteLast;
+    clearTimeout(autoCompleteLast);
+    return autoCompleteLast = setTimeout(function() {
+      var searchStr;
+      searchStr = $('#player-search').val();
+      if (searchStr) {
+        return $.ajax({
+          type: "POST",
+          url: "/players/search",
+          data: {
+            string: searchStr
+          },
+          success: function(data) {
+            var d, i, len, playerSearchUl, playerStr, ref;
+            if (data['players'].length > 0) {
+              playerSearchUl = $('#player-search-ul');
+              playerSearchUl.html('');
+              ref = data['players'];
+              for (i = 0, len = ref.length; i < len; i++) {
+                d = ref[i];
+                playerStr = "" + (highlightSubString(d.full_name, data['searchStr']));
+                playerStr = playerStr + " (" + d.pro_team + " - " + d.position + ")";
+                playerSearchUl.append("<li class='player-picker-item' data-id='" + d.id + "'>" + playerStr + "</li>");
+              }
+              $('.player-search-autocomplete').show();
+              $('.player-picker-item').click(setPick);
+            } else {
+              $('.player-search-autocomplete').hide();
+            }
+            return false;
+          },
+          error: function(data) {
+            return false;
+          }
+        });
+      } else {
+        return $('.player-search-autocomplete').hide();
+      }
+    }, 1000);
+  });
+});

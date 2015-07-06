@@ -33,7 +33,7 @@
     <%= f.select :bn, (0..30).to_a, {selected: "6"}, class: "form-text col-1" %>
     <%= f.label :user_team, "Your Team", class: "col-2 lbl-right" %>
     <%= f.select :user_team, (1..12).to_a, {selected: "1"}, class: "form-text col-1" %>
-    <a href="#" class="btn btn-sm btn-blue push-1 col-2">Edit Team Names</a>
+    <%= link_to "Edit Team Names", teams_edit_path, class: "btn btn-sm btn-blue push-1 col-2", remote: true %>
   </div>
   <div id="team_names">
     <%= f.fields_for :teams do |t| %>
@@ -45,5 +45,4 @@
       <%= f.submit "Start Mock", class: "btn btn-lg btn-blue" %>
     </div>
   </div>
-  <div><%= @mock.teams.length %></div>
 <% end %>
