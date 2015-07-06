@@ -5,7 +5,7 @@ setModalContent("<%= j(render 'form') %>", function() {
   for(var i = 0; i < count; i++) {
     curName = $('#mock_teams_attributes_' + i + '_name').val();
     teamUpdateForm.append("<input type='text' name='team-" + i + "' id='team-" + i + "' \
-                          class='col-8 form-text' placeholder='Team " + (i + 1) + " Name' \
+                          class='col-8 form-text' placeholder='Team " + i + " Name' \
                           value=\"" + curName + "\">");
   }
 

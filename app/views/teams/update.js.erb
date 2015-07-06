@@ -3,6 +3,7 @@ for(var i = 0; i < count; i++) {
   var teamVal = $('#team-' + i).val();
   teamVal = teamVal.replace(/"/g, "");
   $('#mock_teams_attributes_' + i + '_name').val(teamVal);
+  $("#mock_user_team option[value=\"" + i + "\"").text(teamVal);
 }
 
 $('.modal').fadeOut('fast');
