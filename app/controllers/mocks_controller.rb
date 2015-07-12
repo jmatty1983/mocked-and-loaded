@@ -7,6 +7,7 @@ class MocksController < ApplicationController
 
   def create
     @mock = Mock.new(mock_params)
+    @mock.teams[@mock.user_team.to_i].user_team = true
 
     if @mock.save
       teams = @mock.teams

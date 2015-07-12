@@ -2,8 +2,8 @@ $('.modal').fadeOut('fast');
 var pickDiv = $("#pick-<%= "#{@pick.id}" %>");
 
 <% if @pick.player %>
-  pickDiv.html('<a class="mock-tracker-edit-btn" data-remote="true" href="/picks/<%= @pick.id %>/edit"><%= @pick.player.full_name %></a>');
+  pickDiv.html('<a class="mock-tracker-edit-btn<%= " mock-tracker-user-team" if @pick.team.user_team %>" data-remote="true" href="/picks/<%= @pick.id %>/edit"><%= @pick.player.full_name %></a>');
   pickDiv.append('<%= j(content_tag :span, @pick.player.position, class: "mock-tracker-right-#{@pick.player.position}") if @pick.player %>');
 <% else %>
-  pickDiv.html('<a class="mock-tracker-edit-btn" data-remote="true" href="/picks/<%= @pick.id %>/edit"><%= @pick.team.name %></a>');
+  pickDiv.html('<a class="mock-tracker-edit-btn<%= " mock-tracker-user-team" if @pick.team.user_team %>" data-remote="true" href="/picks/<%= @pick.id %>/edit"><%= @pick.team.name %></a>');
 <% end %>
