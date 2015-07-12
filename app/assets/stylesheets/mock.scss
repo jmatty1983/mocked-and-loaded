@@ -1,48 +1,7 @@
-.mock-tracker {
-  max-height: 40em;
-  overflow-y: scroll;
-  border-style: inset;
-  border-width: 2px;
-  font-size: .8em;
-}
-
-.mock-tracker-item {
-  padding: 1px 0;
-  text-indent: .4em;
-  &:hover {
-    background: #cfc;
+.mock-main {
+  ul {
+    li {
+      margin-left: 2em;
+    }
   }
-}
-
-.mock-tracker-user-team {
-  background: #add8e6;
-}
-
-.mock-tracker-edit-btn {
-  color: #000;
-}
-
-[class*='mock-tracker-right-'] {
-  text-indent: 0;
-  float: right;
-  color: #fff;
-  padding: 0 5px;
-  border-radius: 9px;
-  background: #000;
-}
-
-.mock-tracker-right-RB {
-  background: #ffa500;
-}
-
-.mock-tracker-right-WR {
-  background: #3299CC;
-}
-
-.mock-tracker-right-QB {
-  background: #49E20E;
-}
-
-.mock-tracker-right-TE {
-  background: #820BBB;
 }
