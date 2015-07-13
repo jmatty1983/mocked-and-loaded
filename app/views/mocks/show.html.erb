@@ -1,14 +1,39 @@
-<div class="col-3"><%= render 'mock_tracker' %></div>
-<div class="col-13 mock-main landing-block">
-  <h1>Are you ready?</h1>
-  <ul>
-    <li>Click individual draft picks in mock tracker</li>
-    <li>Customize the pick order</li>
-    <li>Set any keepers</li>
-    <li>Click begin</li>
-    <li>DOMINATE YOUR LEAGUE!!!</li>
-  </ul>
-  <div class="center-wrap">
-    <div id="mock-start" class="btn btn-blue btn-lg">Begin</div>
+<div class="col-3">
+  <%= render 'mock_tracker' %>
+</div>
+
+<div class="col-10 mock-main landing-block">
+  <div id="mock-main-inner">
+    <h1>Are you ready?</h1>
+    <ul>
+      <li>Click individual draft picks in mock tracker</li>
+      <li>Customize the pick order</li>
+      <li>Set any keepers</li>
+      <li>Click begin</li>
+      <li>DOMINATE YOUR LEAGUE!!!</li>
+    </ul>
+    <div class="center-wrap">
+      <%= link_to "Begin", mock_start_path, class: "btn btn-blue btn-lg", remote: true %>
+    </div>
   </div>
+
+  <input type="hidden" id="mock-data"
+    data-k="<%= @mock.k %>"
+    data-qb="<%= @mock.qb %>"
+    data-rb="<%= @mock.rb %>"
+    data-wr="<%= @mock.wr %>"
+    data-te="<%= @mock.te %>"
+    data-bn="<%= @mock.bn %>"
+    data-dst="<%= @mock.dst %>"
+    data-rbwr="<%= @mock.rbwr %>"
+    data-rbwrte="<%= @mock.rbwrte %>"
+    data-qbrbwrte="<%= @mock.qbrbwrte %>"
+    data-user_team="<%= @mock.user_team %>"
+    data-team_count="<%= @mock.team_count %>"
+  >
+</div>
+
+<div class="col-3">
+  Team Info
+
 </div>

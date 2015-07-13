@@ -1,6 +1,14 @@
+.nav-bar {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: .8em 0 .8em .4em;
+}
+
 .nav {
   list-style: none;
   li {
     display: inline;
+    margin-right: .8em;
   }
 }

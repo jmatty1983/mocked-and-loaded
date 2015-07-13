@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'picks/edit'
+
   post 'players/search' => 'players#search'
+
+  get 'mock/start' => 'mocks#start'
 
   resources :mocks
   resources :picks

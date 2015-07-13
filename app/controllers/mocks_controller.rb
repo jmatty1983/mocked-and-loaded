@@ -36,6 +36,10 @@ class MocksController < ApplicationController
     @mock = Mock.find(params[:id])
   end
 
+  def start
+
+  end
+
   private
 
     def mock_params

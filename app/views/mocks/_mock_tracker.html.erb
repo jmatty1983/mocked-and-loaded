@@ -3,7 +3,9 @@
     <%= content_tag :div, class: "row" do %>
       <%= content_tag :div, "#{i / @mock.team_count + 1}.#{i % @mock.team_count + 1}", class: "col-2 no-vpad" %>
       <% classes = "mock-tracker-edit-btn#{" mock-tracker-user-team" if pick.team.user_team}" %>
-      <%= content_tag :div, class: "col-14 no-vpad mock-tracker-item", id: "pick-#{pick.id}" do %>
+      <% divDataHash = {class: "col-14 no-vpad mock-tracker-item", id: "pick-#{pick.id}"} %>
+      <% divDataHash["data-player-id"] = pick.player.id if pick.player %>
+      <%= content_tag :div, divDataHash do %>
         <% if pick.player %>
           <% linkStr = "#{pick.player.first_name} #{pick.player.last_name}" %>
         <% else %>
