@@ -1,0 +1,38 @@
+.team-view {
+  font-size: .8em;
+
+  h1 {
+    text-align: center;
+  }
+  .row {
+    padding: 1px 0;
+  }
+}
+
+[class*='team-view-badge-'] {
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: #000;
+  text-align: center;
+}
+
+.team-view-badge-RB {
+  background: #ffa500;
+}
+
+.team-view-badge-WR {
+  background: #3299CC;
+}
+
+.team-view-badge-QB {
+  background: #49E20E;
+}
+
+.team-view-badge-TE {
+  background: #820BBB;
+}
+
+.team-view-badge-FLX {
+  background: #B22222;
+}

@@ -1,0 +1,49 @@
+<h1>Team Info</h1>
+<select class="form-text" id="team-view-select">
+  <% @mock.teams.each_with_index do |team, i| %>
+    <option value="<%= i %>" <%= "selected=1" if i == @mock.user_team %>><%= team.name %></option>
+  <% end %>
+  <% user_team = @mock.teams[@mock.user_team] %>
+</select>
+<div class="col-8">
+  <% @mock.qb.to_i.times do |i| %>
+    <div class="row"><div class="col-4 team-view-badge-QB no-vpad"><span >QB:</span></div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.rb.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-RB">RB:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.wr.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-WR">WR:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.rbwr.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-FLX">FLX:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.rbwrte.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-FLX">FLX:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.qbrbwrte.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-FLX">FLX:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.te.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-TE">TE:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.k.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-K">K:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+
+  <% @mock.dst.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-DST">DST:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+</div>
+<div class="col-8">
+  <% @mock.bn.to_i.times do |i| %>
+    <div class="row"><div class="col-4 no-vpad team-view-badge-BN">BN:</div><div class="col-12 no-vpad">None</div></div>
+  <% end %>
+</div>
