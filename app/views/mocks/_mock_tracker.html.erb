@@ -1,17 +1,19 @@
 <%= content_tag :div, class: 'mock-tracker' do %>
-  <% @mock.picks.each_with_index do |pick, i| %>
+
+  <% @picks.each_with_index do |pick, i| %>
     <%= content_tag :div, class: "row" do %>
       <%= content_tag :div, "#{i / @mock.team_count + 1}.#{i % @mock.team_count + 1}", class: "col-2 no-vpad" %>
       <% classes = "mock-tracker-edit-btn#{" mock-tracker-user-team" if pick.team.user_team}" %>
-      <% divDataHash = {class: "col-14 no-vpad mock-tracker-item", id: "pick-#{pick.id}"} %>
+      <% divDataHash = {class: "col-14 no-vpad mock-tracker-item", id: "pick-#{pick.index}"} %>
       <% divDataHash["data-player-id"] = pick.player.id if pick.player %>
+      <% divDataHash["data-team-index"] = pick.team.index %>
       <%= content_tag :div, divDataHash do %>
         <% if pick.player %>
           <% linkStr = "#{pick.player.first_name} #{pick.player.last_name}" %>
         <% else %>
           <% linkStr = "#{pick.team.name}" %>
         <% end %>
-        <%= link_to linkStr, edit_pick_path(pick), class: classes, remote: true %>
+        <%= link_to linkStr, edit_pick_path(:id => pick.index), class: classes, remote: true %>
         <%= content_tag :span, pick.player.position, class: "mock-tracker-right-#{pick.player.position}" if pick.player %>
       <% end %>
     <% end %>

@@ -8,32 +8,30 @@ class MocksController < ApplicationController
   def create
     @mock = Mock.new(mock_params)
     @mock.teams[@mock.user_team.to_i].user_team = true
+    @mock.teams.each_with_index { |team, i| team.index = i }
 
-    if @mock.save
-      teams = @mock.teams
+    if @mock.valid?
+      index = 1
+      @picks = []
 
-      Pick.transaction do
-        @mock.round_count.times do |i|
-          if i % 2 == 0
-            teams.each do |team|
-              team.picks.create()
-            end
-          else
-            teams.reverse.each do |team|
-              team.picks.create()
-            end
+      @mock.round_count.times do |i|
+        if i % 2 == 0
+          @mock.teams.each do |team|
+            @picks << team.picks.build(index: index)
+            index = index + 1
+          end
+        else
+          @mock.teams.reverse.each do |team|
+            @picks << team.picks.build(index: index)
+            index = index + 1
           end
         end
       end
 
-      redirect_to @mock
+      render 'show'
     else
       render 'new'
     end
-  end
-
-  def show
-    @mock = Mock.find(params[:id])
   end
 
   def start

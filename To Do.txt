@@ -1,0 +1,4 @@
+Immediate: Need to populate the team select on the pick editor.
+
+Need a way to track teams.
+  -Thinking of attaching data attributes to the mock tracker items and updating the team elements as the tracker is updated

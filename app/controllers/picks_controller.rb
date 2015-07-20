@@ -1,12 +1,12 @@
 class PicksController < ApplicationController
 
   def edit
-    @pick = Pick.find(params[:id])
+    @pick = params[:id]
   end
 
   def update
-    @pick = Pick.find(params[:id])
-    @pick.update(pick_params)
+    @pick = Pick.new(pick_params)
+    @pick.index = params[:id]
   end
 
   private

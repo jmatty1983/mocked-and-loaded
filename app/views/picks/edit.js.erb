@@ -1,6 +1,12 @@
 $('.modal').fadeIn("fast");
 
-setModalContent('<%= j(render 'form', pick: @pick) %>', function() {
+var pick = {
+  index: <%= @pick %>,
+  team_id: $('#pick-<%= @pick %>').data('team-index'),
+  player_id: $('#pick-<%= @pick %>').data('player-id')
+};
+
+setModalContent(buildPickForm(<%= @pick %>), function() {
   $('#player-clear').click(function(){
     $('#player-search').val('');
     $('#pick_player_id').val('');
